@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 4</title>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="rectangle" style ="border: 3px solid black; width: 200px; height: 10px;"></div>
+    <div style="margin-top: 150px">
+        <button id="sizeUp">Augmente la hauteur de 10px, s'il dépasse 100px, il remet la hauteur à 10px.</button>
+        <button id="green">Met le rectangle en vert.</button>
+        <button id="reset">Remet les couleurs initiales.</button>
+        <button id="hide">Fait disparaître le rectangle.</button>
+        <button id="show">Fait réaparaître le rectangle</button>
+    </div>
+  <script>
+      $(function(){
+
+          $("#sizeUp").click(function(){
+            
+            if ($("#rectangle").height() > 100)
+            {$('#rectangle').height(10)}
+            else {$("#rectangle").height("+=10")} 
+            })
+
+          $("#green").click(function(){
+              $("#rectangle").css({"border": "3px solid green", "background-color": "green"})
+          })
+
+          $("#reset").click(function(){
+              $("#rectangle").css({"border": "3px solid black", "background-color": "black"})
+          })
+          $("#hide").click(function(){
+              $("#rectangle").hide(2000)
+          })
+          $("#show").click(function(){
+              $("#rectangle").show(2000)
+          })
+      })
+  </script>
+</body>
+</html>

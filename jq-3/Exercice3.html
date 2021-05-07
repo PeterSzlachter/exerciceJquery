@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <title>Exercice 3</title>
+</head>
+
+<body>
+  <p>Construisez une page html avec un **bouton** et **un champ texte**.
+    Le but est de trouver un nombre entre 0 et 100.
+    A chaque réponse la page répond :
+    * Plus.
+    * Moins.
+    * Correcte.
+    Quand la réponse est trouvée, on obtient le nombre d'essai que l'on a fait.</p>
+
+  <input type="number" />
+  <button>Testez</button>
+  <p><span></span></p>
+  <script>
+    let answerNumber = 55;
+    let counter = 0;
+    $(function () {
+      $("button").click(function () {
+        let answer = $("input").val();
+        if (answer > 0 && answer <= 100) {
+          counter++;
+          if (answer > answerNumber) {
+            $("span").text("C'est plus petit")
+          }
+          else if (answer < answerNumber) {
+            $("span").text("c'est plus grand")
+          }
+          else if (answer == answerNumber) {
+            $("span").text("Vous avez trouvé ! Nombre de tentatives : " + counter)
+          }
+        }
+        else {
+          $("span").text("Erreur ! Mettre un chiffre entre 0 et 100")
+        }
+      })
+    })
+  </script>
+</body>
+</html>

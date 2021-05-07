@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Exercice 2</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button id="minus">Bouton moins</button>
+    <button id="plus">Bouton plus</button>
+    <p>Nombre de clique :<span id="count">0</span></p>
+  <script>
+    let counter = 0;
+      $("#plus").click(function(){
+        counter++;
+        $("#count").text(counter)
+      })
+      $("#minus").click(function(){
+        if( counter > 0){
+        counter--;
+        $("#count").text(counter)
+        }
+
+      })
+  </script>
+</body>
+
+</html>
